@@ -39,24 +39,13 @@ var MapFcns = {
                 $('#setting-lat').text(currAirport.Latitude);
                 $('#setting-long').text(currAirport.Longitude);
 
-                function addMarker() {
-                  var marker = new google.maps.Marker({
-                    position: {lat: currAirport.Latitude, lng: currAirport.Longitude},
-                    map: globalMap,
-                    title: currAirport.Code
-                  });
-                  //creating array of markers.
-                  markers.push(marker);
 
-                  console.log(markers);
-                  globalMap.setCenter({lat: currAirport.Latitude, lng: currAirport.Longitude})
-                }
                 //set up test to see if airport is already marker
                 if(!currAirport.toggled || currAirport.toggled === 0) {
                   //sets limit on markers
-                  if(markers.length < 16) {
+                  if(markers.length < 14) {
                     currAirport.toggled = 1;
-                    addMarker();
+                    MarkerFcns.addMarker(currAirport);
                     MarkerFcns.addToMarkerList();
                   }
                 } else {globalMap.setCenter({lat: currAirport.Latitude, lng: currAirport.Longitude})}
