@@ -1,5 +1,5 @@
 #airport-settings {
-  position: absolute;
+  position: relative;
   top:1015px;
   left: 100px;
   background-color: rgba(155,155,155,0.8);
@@ -26,6 +26,7 @@
 }
 
 #airport-map{
+    position: relative;
     width: 800px;
     height: 600px;
 }
@@ -46,7 +47,7 @@
 }
 #markerList {
   z-index: 1000;
-  position: absolute;
+  position: relative;
   top: 600px;
   left: 20px;
   background-color: rgba(155,155,155, 0.8);
