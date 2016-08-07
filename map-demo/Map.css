@@ -1,7 +1,9 @@
 #airport-settings {
-    width: calc(100% - 8px);
-    border: 2px solid black;
-    height: 128px;
+  position: absolute;
+  top:1015px;
+  left: 100px;
+  background-color: rgba(155,155,155,0.8);
+    width: calc(100% - 80px);
     padding: 4px;
     margin: 10px 14px 10px 0px;
 }
@@ -41,4 +43,38 @@
     vertical-align: text-bottom;
     font-size: 32px;
     font-weight: bold;
+}
+#markerList {
+  z-index: 1000;
+  position: absolute;
+  top: 600px;
+  left: 20px;
+  background-color: rgba(155,155,155, 0.8);
+  width: 80px;
+  border-radius: 3px;
+}
+#markerList p {
+  text-align: center;
+}
+#markerList div {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 70px;
+  height: 20px;
+  margin: 5px auto;
+}
+#markerList div p {
+  text-align: left;
+  display: inline;
+  margin-right: 13px;
+  pointer-events: none;
+}
+#markerList div button {
+  float: right;
+  background-color: rgba(255, 0, 0, 0.5);
+  border: 0;
+  margin-top: 1px;
+  border-radius: 5px;
+  margin-bottom: 1px;
+  margin-right: 1px;
 }
