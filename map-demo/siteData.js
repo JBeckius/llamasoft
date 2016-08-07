@@ -1,4 +1,4 @@
-exports.sites = [{Code: "YEG", City: "Edmonton", State: "AB", FullSiteName: "AIRPORT_YEG_Edmonton International Airport", Latitude: 53.3097, Longitude: -113.58},
+sites = [{Code: "YEG", City: "Edmonton", State: "AB", FullSiteName: "AIRPORT_YEG_Edmonton International Airport", Latitude: 53.3097, Longitude: -113.58},
 {Code: "YYC", City: "Calgary", State: "AB", FullSiteName: "AIRPORT_YYC_Calgary International Airport", Latitude: 51.1341, Longitude: -114.007},
 {Code: "ANC", City: "Anchorage", State: "AK", FullSiteName: "AIRPORT_ANC_Ted Stevens Anchorage International", Latitude: 61.1744, Longitude: -149.996},
 {Code: "BHM", City: "Birmingham", State: "AL", FullSiteName: "AIRPORT_BHM_Birmingham-Shuttlesworth International Airport", Latitude: 33.5606, Longitude: -86.7493},
