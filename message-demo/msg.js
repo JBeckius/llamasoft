@@ -4,15 +4,22 @@ var loopHandle = null;
 // Use any combination of javascript, HTML and CSS that you feeling
 // is appropriate
 messageSystem = {
+    msgCount: 0,
     showMessage: function(msg) {
+      if (messageSystem.msgCount < 5) {
         messageSystem.makeMessage(msg);
+      }
     },
 
     makeMessage: function(msg) {
+      messageSystem.msgCount += 1;
       var $msg = $('<div></div>');
       var $content = $('<p></p>');
       $msg.attr('class', 'msg');
-      $content.text(msg)
+      if(msg.length > 50) {
+        $content.text(msg.slice(0, 50) + "...");
+      } else { $content.text(msg) }
+
       var $btn = $('<button></button>');
       $btn.text('X');
       $btn.appendTo($msg);
@@ -21,7 +28,8 @@ messageSystem = {
       var lifecycle = setTimeout(function() {
         $msg.fadeOut(1000, function() {
 
-          // $msg.remove()
+          $msg.remove()
+          messageSystem.msgCount -= 1;
         });
         // $msg.remove();
       }, 3000);
@@ -50,6 +58,7 @@ function loop() {
     var rand = Math.round(Math.random() * (3000 - 500)) + 500;
     loopHandle = setTimeout(loop, rand);
 }
+loop();
 
 $(function() {
    $('#msgButton').click(function() {
@@ -70,4 +79,8 @@ $(function() {
   $('#msgDiv').on('click', 'button', function() {
     $(this).parent().remove();
   });
+  $('.msg').on('click', function() {
+    this.css('opacity', 1);
+    // $(this).clearTimeout(loopHandle);
+  })
 });
